@@ -22,10 +22,8 @@ df_values = [
 ]
 df_columns = ["Торговый код", "Эмитент", "Тип", "Капитализация, руб.", "Отрасль"]
 df = pd.DataFrame(df_values, columns=df_columns)
-srs = df.value_counts(["Эмитент"])
-print(srs[srs > 1].index.to_list())
-# print(
-#     df[df.duplicated("Эмитент", keep=False)][
-#         ["Эмитент", "Тип", "Капитализация, руб."]
-#     ].reset_index(drop=True)
-# )
+print(
+    df[df.duplicated("Эмитент", keep=False)][
+        ["Эмитент", "Тип", "Капитализация, руб."]
+    ].reset_index(drop=True)
+)
